@@ -178,7 +178,7 @@ class BirdSpeciesRecognitionApp:
         # Sidebar image display
         image_path = "birdclef.png"  # Update with the actual path
         if os.path.exists(image_path):
-            st.sidebar.image(image_path, use_column_width=True)
+            st.sidebar.image(image_path, use_container_width=True)
         else:
             st.sidebar.warning("No image available")
 
@@ -194,7 +194,7 @@ class BirdSpeciesRecognitionApp:
 
         image_path = "deer.jpg"  # Update with the actual path
         if os.path.exists(image_path):
-            st.sidebar.image(image_path, use_column_width=True)
+            st.sidebar.image(image_path, use_container_width=True)
         else:
             st.sidebar.warning("No image available")
 
@@ -203,7 +203,7 @@ class BirdSpeciesRecognitionApp:
             "Select Audio Input Method", 
             [
                 "Upload Audio File", 
-                # "Record from Microphone"
+                "Record from Microphone"
              ]
         )
 
@@ -276,7 +276,7 @@ class BirdSpeciesRecognitionApp:
                                 
                                 # Display image if available
                                 if species_info["image_url"]:
-                                    st.image(species_info["image_url"], caption=species, use_column_width=True)
+                                    st.image(species_info["image_url"], caption=species, use_container_width=True)
                                 
                                 # Link to full Wikipedia article
                                 st.markdown(f"[🔗 Read more on Wikipedia]({species_info['url']})")

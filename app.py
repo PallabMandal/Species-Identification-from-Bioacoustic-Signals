@@ -4,6 +4,8 @@ import pandas as pd
 import librosa
 import librosa.display
 import wikipedia
+import requests
+from bs4 import BeautifulSoup
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, BatchNormalization, GlobalAveragePooling2D, Dense, Dropout
@@ -94,18 +96,36 @@ class BirdSpeciesRecognitionApp:
         except Exception as e:
             st.error(f"Prediction error: {e}")
             return None, None
-
+        
     def get_species_info(self, species_name):
         """
-        Fetch Wikipedia information about the species
+        Fetch Wikipedia information, including image, classification, and summary.
         """
         try:
-            # Try to get Wikipedia summary
+            # Fetch Wikipedia page
             page = wikipedia.page(species_name)
             summary = page.summary
+            url = page.url
+            
+            # Extract image and classification using BeautifulSoup
+            response = requests.get(page.url)
+            soup = BeautifulSoup(response.text, "html.parser")
+
+            # Find first image in the infobox
+            infobox = soup.find("table", {"class": "infobox"})
+            if infobox:
+                img_tag = infobox.find("img")
+                if img_tag:
+                    image_url = "https:" + img_tag["src"]  # Get full image URL
+                else:
+                    image_url = None
+            else:
+                image_url = None
+
             return {
-                'summary': summary,
-                'url': page.url
+                "summary": summary,
+                "url": url,
+                "image_url": image_url
             }
         except wikipedia.exceptions.DisambiguationError as e:
             st.warning(f"Multiple matches found. Suggestions: {e.options[:5]}")
@@ -113,6 +133,25 @@ class BirdSpeciesRecognitionApp:
         except Exception as e:
             st.error(f"Could not fetch Wikipedia info: {e}")
             return None
+
+    # def get_species_info(self, species_name):
+    #     """
+    #     Fetch Wikipedia information about the species
+    #     """
+    #     try:
+    #         # Try to get Wikipedia summary
+    #         page = wikipedia.page(species_name)
+    #         summary = page.summary
+    #         return {
+    #             'summary': summary,
+    #             'url': page.url
+    #         }
+    #     except wikipedia.exceptions.DisambiguationError as e:
+    #         st.warning(f"Multiple matches found. Suggestions: {e.options[:5]}")
+    #         return None
+    #     except Exception as e:
+    #         st.error(f"Could not fetch Wikipedia info: {e}")
+    #         return None
 
     def record_audio(self, duration=5, sample_rate=44100):
         """
@@ -224,18 +263,38 @@ class BirdSpeciesRecognitionApp:
                 top_3_species, top_3_probabilities = self.predict_species(spectrogram)
                 
                 if top_3_species:
-                    st.subheader("Top 3 Predicted Species")
+                    st.subheader("🔍 Top 3 Predicted Species")
                     for species, prob in zip(top_3_species, top_3_probabilities):
-                        st.write(f"{species}: {prob*100:.2f}%")
-                        
-                        # Fetch and display species info for top prediction
-                        if species == top_3_species[0]:
+                        st.write(f"**{species}**: {prob*100:.2f}% confidence")
+
+                        if species == top_3_species[0]:  # Only fetch info for top prediction
                             species_info = self.get_species_info(species)
-                            
+
                             if species_info:
-                                st.subheader("Species Information")
-                                st.write(species_info['summary'])
-                                st.markdown(f"[Read more on Wikipedia]({species_info['url']})")
+                                st.subheader("📖 Species Information")
+                                st.write(species_info["summary"])
+                                
+                                # Display image if available
+                                if species_info["image_url"]:
+                                    st.image(species_info["image_url"], caption=species, use_column_width=True)
+                                
+                                # Link to full Wikipedia article
+                                st.markdown(f"[🔗 Read more on Wikipedia]({species_info['url']})")
+
+
+                # if top_3_species:
+                #     st.subheader("Top 3 Predicted Species")
+                #     for species, prob in zip(top_3_species, top_3_probabilities):
+                #         st.write(f"{species}: {prob*100:.2f}%")
+                        
+                #         # Fetch and display species info for top prediction
+                #         if species == top_3_species[0]:
+                #             species_info = self.get_species_info(species)
+                            
+                #             if species_info:
+                #                 st.subheader("Species Information")
+                #                 st.write(species_info['summary'])
+                #                 st.markdown(f"[Read more on Wikipedia]({species_info['url']})")
 
         # Clean up temporary files
         if os.path.exists("recorded_audio.wav"):

@@ -1,0 +1,13 @@
+streamlit
+numpy
+pandas
+librosa
+wikipedia
+requests
+beautifulsoup4
+tensorflow
+sounddevice
+soundfile
+matplotlib
+opencv-python
+ipython

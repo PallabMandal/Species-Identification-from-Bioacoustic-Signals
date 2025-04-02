@@ -17,6 +17,8 @@ import matplotlib.pyplot as plt
 import cv2
 import os
 from IPython.display import Audio
+import folium
+from streamlit_folium import folium_static
 
 class BirdSpeciesRecognitionApp:
     def __init__(self):
@@ -99,33 +101,34 @@ class BirdSpeciesRecognitionApp:
         
     def get_species_info(self, species_name):
         """
-        Fetch Wikipedia information, including image, classification, and summary.
+        Fetch Wikipedia information, excluding the range map.
         """
         try:
-            # Fetch Wikipedia page
             page = wikipedia.page(species_name)
             summary = page.summary
             url = page.url
-            
-            # Extract image and classification using BeautifulSoup
+
+            # Extract image using BeautifulSoup
             response = requests.get(page.url)
             soup = BeautifulSoup(response.text, "html.parser")
-
-            # Find first image in the infobox
             infobox = soup.find("table", {"class": "infobox"})
+
+            image_url = None
             if infobox:
-                img_tag = infobox.find("img")
-                if img_tag:
-                    image_url = "https:" + img_tag["src"]  # Get full image URL
-                else:
-                    image_url = None
-            else:
-                image_url = None
+                img_tags = infobox.find_all("img")
+                print(len(img_tags))
+                if img_tags:
+                    # print all img tags
+                    image_urls = []
+                    for i in range(len(img_tags)):
+                        image_url = "https:" + img_tags[i]["src"]
+                        print(image_url)
+                        image_urls.append(image_url)
 
             return {
                 "summary": summary,
                 "url": url,
-                "image_url": image_url
+                "image_urls": image_urls
             }
         except wikipedia.exceptions.DisambiguationError as e:
             st.warning(f"Multiple matches found. Suggestions: {e.options[:5]}")
@@ -133,6 +136,7 @@ class BirdSpeciesRecognitionApp:
         except Exception as e:
             st.error(f"Could not fetch Wikipedia info: {e}")
             return None
+
 
     # def get_species_info(self, species_name):
     #     """
@@ -152,6 +156,7 @@ class BirdSpeciesRecognitionApp:
     #     except Exception as e:
     #         st.error(f"Could not fetch Wikipedia info: {e}")
     #         return None
+
 
     def record_audio(self, duration=5, sample_rate=44100):
         """
@@ -261,11 +266,13 @@ class BirdSpeciesRecognitionApp:
                 # Predict species
                 # if st.button("Identify Species"):
                 top_3_species, top_3_probabilities = self.predict_species(spectrogram)
-                
+
                 if top_3_species:
-                    st.subheader("🔍 Top 3 Predicted Species")
                     for species, prob in zip(top_3_species, top_3_probabilities):
-                        st.write(f"**{species}**: {prob*100:.2f}% confidence")
+                        if species == top_3_species[0]:  # Top prediction
+                            st.markdown(f"### Species inferred: {species}")  # H3 header with bold effect
+                        else:
+                            st.write(f"Species inferred: ***{species}***", unsafe_allow_html=True)
 
                         if species == top_3_species[0]:  # Only fetch info for top prediction
                             species_info = self.get_species_info(species)
@@ -273,11 +280,22 @@ class BirdSpeciesRecognitionApp:
                             if species_info:
                                 st.subheader("📖 Species Information")
                                 st.write(species_info["summary"])
-                                
-                                # Display image if available
-                                if species_info["image_url"]:
-                                    st.image(species_info["image_url"], caption=species, use_container_width=True)
-                                
+
+                                # Display all images in image_urls list side by side
+                                if species_info["image_urls"]:
+                                    st.subheader("Images")
+                                    cols = st.columns(2)  # Create two columns
+                                    with cols[0]:
+                                        st.image(species_info["image_urls"][0], caption=species, use_container_width=True)
+                                    map_url = ""
+                                    for img_url in species_info["image_urls"]:
+                                        # If img_url contains "map", assign and break
+                                        if "map" in img_url:
+                                            map_url = img_url
+                                            break
+                                    with cols[1]:
+                                        st.image(map_url, caption=f"{species} - Habitat Range", use_container_width=True)
+
                                 # Link to full Wikipedia article
                                 st.markdown(f"[🔗 Read more on Wikipedia]({species_info['url']})")
 

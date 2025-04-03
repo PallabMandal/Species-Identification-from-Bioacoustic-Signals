@@ -6,7 +6,7 @@ wikipedia
 requests
 beautifulsoup4
 tensorflow
-pyaudio
+sounddevice
 soundfile
 matplotlib
 opencv-python

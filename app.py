@@ -168,7 +168,11 @@ class BirdSpeciesRecognitionApp:
                             channels=1, 
                             dtype='float64')
         sd.wait()
-        
+
+        # recording = st.audio_input("Record a voice message")
+
+        # if recording:
+        #     st.audio(recording, end_time="5s")
         # Save recording
         output_filename = 'recorded_audio.wav'
         sf.write(output_filename, recording, sample_rate)
@@ -251,8 +255,8 @@ class BirdSpeciesRecognitionApp:
             
             if spectrogram is not None:
                 # Display spectrogram
-                st.subheader("Audio Spectrogram")
-                plt.figure(figsize=(12, 2))  # Extend width, reduce height
+                # st.subheader("Audio Spectrogram")
+                plt.figure(figsize=(10, 4))  # Extend width, reduce height
                 librosa.display.specshow(
                     librosa.power_to_db(librosa.feature.melspectrogram(
                         y=librosa.load("recorded_audio.wav")[0]
@@ -261,7 +265,11 @@ class BirdSpeciesRecognitionApp:
                 plt.colorbar(format='%+2.0f dB')
                 plt.title('Mel Spectrogram')
                 plt.axis("off")  # Remove axes for a cleaner look
-                st.pyplot(plt, bbox_inches='tight')
+                expander = st.expander("Audio Spectrogram", expanded=False)
+                with expander:
+                    st.pyplot(plt, bbox_inches='tight')
+                plt.close()
+                # st.pyplot(plt, bbox_inches='tight')
 
                 
                 # Predict species
@@ -272,10 +280,10 @@ class BirdSpeciesRecognitionApp:
                     for species, prob in zip(top_3_species, top_3_probabilities):
                         if species == top_3_species[0]:  # Top prediction
                             st.markdown(f"### Species inferred: {species}")  # H3 header with bold effect
-                        else:
-                            st.write(f"Species inferred: ***{species}***", unsafe_allow_html=True)
+                        # else:
+                        #     st.write(f"Species inferred: ***{species}***", unsafe_allow_html=True)
 
-                        if species == top_3_species[0]:  # Only fetch info for top prediction
+                        # if species == top_3_species[0]:  # Only fetch info for top prediction
                             species_info = self.get_species_info(species)
 
                             if species_info:

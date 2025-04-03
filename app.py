@@ -11,7 +11,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, BatchNormalization, GlobalAveragePooling2D, Dense, Dropout
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
-import sounddevice as sd
+import pyaudio
 import soundfile as sf
 import matplotlib.pyplot as plt
 import cv2

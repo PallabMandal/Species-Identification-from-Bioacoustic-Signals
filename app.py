@@ -252,16 +252,17 @@ class BirdSpeciesRecognitionApp:
             if spectrogram is not None:
                 # Display spectrogram
                 st.subheader("Audio Spectrogram")
-                plt.figure(figsize=(10, 4))
+                plt.figure(figsize=(12, 2))  # Extend width, reduce height
                 librosa.display.specshow(
                     librosa.power_to_db(librosa.feature.melspectrogram(
                         y=librosa.load("recorded_audio.wav")[0]
-                    ), 
-                    ref=np.max)
+                    ), ref=np.max)
                 )
                 plt.colorbar(format='%+2.0f dB')
                 plt.title('Mel Spectrogram')
-                st.pyplot(plt)
+                plt.axis("off")  # Remove axes for a cleaner look
+                st.pyplot(plt, bbox_inches='tight')
+
                 
                 # Predict species
                 # if st.button("Identify Species"):

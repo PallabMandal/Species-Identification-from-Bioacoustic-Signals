@@ -1,0 +1,207 @@
+primary_label,inat_taxon_id,scientific_name,common_name,class_name
+1139490,1139490,Ragoniella pulchella,Ragoniella pulchella,Insecta
+1192948,1192948,Oxyprora surinamensis,Oxyprora surinamensis,Insecta
+1194042,1194042,Copiphora colombiae,Copiphora colombiae,Insecta
+126247,126247,Leptodactylus insularum,Spotted Foam-nest Frog,Amphibia
+1346504,1346504,Neoconocephalus brachypterus,Neoconocephalus brachypterus,Insecta
+134933,134933,Espadarana prosoblepon,Emerald Glass Frog,Amphibia
+135045,135045,Andinobates opisthomelas,Andean Poison Frog,Amphibia
+1462711,1462711,Cocconotus aratifrons,Cocconotus aratifrons,Insecta
+1462737,1462737,Docidocercus fasciatus,Docidocercus fasciatus,Insecta
+1564122,1564122,Daedadelus waehnerorum ,Daedadelus waehnerorum ,Insecta
+21038,21038,Colostethus inguinalis,Common Rocket Frog,Amphibia
+21116,21116,Dendrobates truncatus,Yellow-striped Poison Dart Frog,Amphibia
+21211,21211,Allobates femoralis,Spotted-thighed Poison Frog,Amphibia
+22333,22333,Eleutherodactylus johnstonei,Lesser Antillean whistling frog,Amphibia
+22973,22973,Leptodactylus fuscus,Whistling Grass Frog,Amphibia
+22976,22976,Leptodactylus fragilis,Mexican White-lipped Frog,Amphibia
+24272,24272,Smilisca phaeota,Masked Tree Frog,Amphibia
+24292,24292,Scinax rostratus,Caracas Snouted Tree Frog,Amphibia
+24322,24322,Scinax ruber,Red Snouted Tree Frog,Amphibia
+41663,41663,Procyon lotor,Common Raccoon,Mammalia
+41778,41778,Lontra longicaudis,Neotropical River Otter,Mammalia
+41970,41970,Panthera onca,Jaguar,Mammalia
+42007,42007,Puma concolor,Mountain Lion,Mammalia
+42087,42087,Cerdocyon thous,Crab-eating Fox,Mammalia
+42113,42113,Pecari tajacu,Collared Peccary,Mammalia
+46010,46010,Sciurus granatensis,Red-tailed Squirrel,Mammalia
+47067,47067,Bradypus variegatus,Brown-throated Three-toed Sloth,Mammalia
+476537,476537,Elachistocleis pearsei,Colombian Plump Frog,Amphibia
+476538,476538,Elachistocleis panamensis,Panama Humming Frog,Amphibia
+48124,48124,Tettigoniidae,Katydids,Insecta
+50186,50186,Cicadidae,Typical Cicadas,Insecta
+517119,517119,Rhinella horribilis,Giant Toad,Amphibia
+523060,523060,Eschatoceras bipunctatus,Eschatoceras bipunctatus,Insecta
+528041,528041,Orophus conspersus,Orophus conspersus,Insecta
+52884,52884,Gryllidae,True Crickets,Insecta
+548639,548639,Copiphora gracilis,Copiphora gracilis,Insecta
+555086,555086,Boana boans,Rusty Tree Frog,Amphibia
+555142,555142,Boana pugnax,Chirique-Flusse Tree Frog,Amphibia
+566513,566513,Alouatta seniculus,Colombian Red Howler Monkey,Mammalia
+64862,64862,Allobates niputidea,Colombian Niputidea Nurse Frog,Amphibia
+65336,65336,Dendropsophus bogerti,Bogert's Aquatic Tree Frog,Amphibia
+65344,65344,Dendropsophus columbianus,Boettger's Colombian Tree Frog,Amphibia
+65349,65349,Dendropsophus ebraccatus,Harlequin Treefrog,Amphibia
+65373,65373,Dendropsophus microcephalus,Yellow Tree Frog,Amphibia
+65419,65419,Diasporus gularis,Esmereldas Robber Frog,Amphibia
+65448,65448,Engystomops pustulosus,Túngara Frog,Amphibia
+65547,65547,Hyalinobatrachium tatayoi,Tatayo's Glass Frog,Amphibia
+65962,65962,Leptodactylus savagei,Savage's Thin-toed Frog,Amphibia
+66016,66016,Lithobates vaillanti,Vaillant's Frog,Amphibia
+66531,66531,Pristimantis achatinus,Cachabi Robber Frog,Amphibia
+66578,66578,Pristimantis bogotensis,Bogota Robber Frog,Amphibia
+66893,66893,Pristimantis taeniatus,Banded Rain Frog,Amphibia
+67082,67082,Rheobates palmatus,Palm Rocket Frog,Amphibia
+67252,67252,Trachycephalus typhonius,Veined Tree Frog,Amphibia
+714022,714022,Panoploscelis specularis,Panoploscelis specularis,Insecta
+715170,715170,Copris susanae,Copris susanae,Insecta
+787625,787625,Leucostethus fraterdanieli,Santa Rita Rocket Frog,Amphibia
+81930,81930,Rhinella humboldti,Rivero's Toad,Amphibia
+868458,868458,Typophyllum inflatum,Typophyllum inflatum,Insecta
+963335,963335,Subria sylvestris,Subria sylvestris,Insecta
+amakin1,2679,Chloroceryle amazona,Amazon Kingfisher,Aves
+amekes,4665,Falco sparverius,American Kestrel,Aves
+ampkin1,2676,Chloroceryle aenea,American Pygmy Kingfisher,Aves
+anhing,5063,Anhinga anhinga,Anhinga,Aves
+babwar,145236,Setophaga castanea,Bay-breasted Warbler,Aves
+bafibi1,3736,Phimosus infuscatus,Bare-faced Ibis,Aves
+banana,10199,Coereba flaveola,Bananaquit,Aves
+baymac,19018,Ara ararauna,Blue-and-yellow Macaw,Aves
+bbwduc,6893,Dendrocygna autumnalis,Black-bellied Whistling-Duck,Aves
+bicwre1,7483,Campylorhynchus griseus,Bicolored Wren,Aves
+bkcdon,116877,Donacobius atricapilla,Black-capped Donacobius,Aves
+bkmtou1,339907,Ramphastos ambiguus,Yellow-throated Toucan,Aves
+blbgra1,10288,Volatinia jacarina,Blue-black Grassquit,Aves
+blbwre1,144857,Pheugopedius fasciatoventris,Black-bellied Wren,Aves
+blcant4,15810,Sakesphorus canadensis,Black-crested Antshrike,Aves
+blchaw1,5346,Busarellus nigricollis,Black-collared Hawk,Aves
+blcjay1,8479,Cyanocorax affinis,Black-chested Jay,Aves
+blctit1,8823,Tityra inquisitor,Black-crowned Tityra,Aves
+blhpar1,19096,Pionus menstruus,Blue-headed Parrot,Aves
+blkvul,4765,Coragyps atratus,Black Vulture,Aves
+bobfly1,16737,Megarynchus pitangua,Boat-billed Flycatcher,Aves
+bobher1,5036,Cochlearius cochlearius,Boat-billed Heron,Aves
+brtpar1,367560,Eupsittula pertinax,Brown-throated Parakeet,Aves
+bubcur1,2050,Crax alberti,Blue-billed Curassow,Aves
+bubwre1,144878,Cantorchilus leucotis,Buff-breasted Wren,Aves
+bucmot3,144643,Momotus subrufescens,Whooping Motmot,Aves
+bugtan,10295,Thraupis episcopus,Blue-gray Tanager,Aves
+butsal1,9855,Saltator maximus,Buff-throated Saltator,Aves
+cargra1,9600,Quiscalus lugubris,Carib Grackle,Aves
+cattyr,17289,Machetornis rixosa,Cattle Tyrant,Aves
+chbant1,554103,Poliocrania exsul,Chestnut-backed Antbird,Aves
+chfmac1,72520,Ara severus,Chestnut-fronted Macaw,Aves
+cinbec1,8690,Pachyramphus cinnamomeus,Cinnamon Becard,Aves
+cocher1,4952,Ardea cocoi,Cocoi Heron,Aves
+cocwoo1,11063,Xiphorhynchus susurrans,Cocoa Woodcreeper,Aves
+colara1,18584,Pteroglossus torquatus,Collared Aracari,Aves
+colcha1,107936,Ortalis columbiana,Colombian Chachalaca,Aves
+compau,19627,Nyctidromus albicollis,Common Pauraque,Aves
+compot1,19667,Nyctibius griseus,Common Potoo,Aves
+cotfly1,17148,Todirostrum cinereum,Common Tody-Flycatcher,Aves
+crbtan1,10057,Ramphocelus dimidiatus,Crimson-backed Tanager,Aves
+crcwoo1,18273,Campephilus melanoleucos,Crimson-crested Woodpecker,Aves
+crebob1,1300,Colinus cristatus,Crested Bobwhite,Aves
+cregua1,2062,Penelope purpurascens,Crested Guan,Aves
+creoro1,10126,Psarocolius decumanus,Crested Oropendola,Aves
+eardov1,3439,Zenaida auriculata,Eared Dove,Aves
+fotfly,16793,Tyrannus savana,Fork-tailed Flycatcher,Aves
+gohman1,339674,Ceratopipra erythrocephala,Golden-headed Manakin,Aves
+grasal4,1286908,Saltator olivascens,Olivaceous Saltator,Aves
+grbhaw1,5238,Buteogallus urubitinga,Great Black Hawk,Aves
+greani1,1970,Crotophaga major,Greater Ani,Aves
+greegr,144455,Ardea alba,Great Egret,Aves
+greibi1,3770,Mesembrinibis cayennensis,Green Ibis,Aves
+grekis,16956,Pitangus sulphuratus,Great Kiskadee,Aves
+grepot1,19680,Nyctibius grandis,Great Potoo,Aves
+gretin1,629096,Tinamus major,Great Tinamou,Aves
+grnkin,2669,Chloroceryle americana,Green Kingfisher,Aves
+grysee1,9487,Sporophila intermedia,Gray Seedeater,Aves
+gybmar,11872,Progne chalybea,Gray-breasted Martin,Aves
+gycwor1,513889,Aramides cajaneus,Gray-cowled Wood-Rail,Aves
+labter1,4569,Phaetusa simplex,Large-billed Tern,Aves
+laufal1,4719,Herpetotheres cachinnans,Laughing Falcon,Aves
+leagre,4239,Tachybaptus dominicus,Least Grebe,Aves
+linwoo1,17858,Dryocopus lineatus,Lineated Woodpecker,Aves
+littin1,20535,Crypturellus soui,Little Tinamou,Aves
+mastit1,8834,Tityra semifasciata,Masked Tityra,Aves
+neocor,1289601,Nannopterum brasilianum,Neotropic Cormorant,Aves
+norscr1,6911,Chauna chavaria,Northern Screamer,Aves
+olipic1,17772,Picumnus olivaceus,Olivaceous Piculet,Aves
+orcpar,19211,Brotogeris jugularis,Orange-chinned Parakeet,Aves
+palhor2,11281,Furnarius leucopus,Pale-legged Hornero,Aves
+paltan1,10297,Thraupis palmarum,Palm Tanager,Aves
+pavpig2,3085,Patagioenas cayennensis,Pale-vented Pigeon,Aves
+piepuf1,1593,Notharchus tectus,Pied Puffbird,Aves
+pirfly1,17312,Legatus leucophaius,Piratic Flycatcher,Aves
+piwtyr1,17281,Fluvicola pica,Pied Water-Tyrant,Aves
+plbwoo1,10890,Dendrocincla fuliginosa,Plain-brown Woodcreeper,Aves
+plctan1,9548,Tangara inornata,Plain-colored Tanager,Aves
+plukit1,5415,Ictinia plumbea,Plumbeous Kite,Aves
+purgal2,519,Porphyrio martinica,Purple Gallinule,Aves
+ragmac1,19016,Ara chloropterus,Red-and-green Macaw,Aves
+rebbla1,793308,Leistes militaris,Red-breasted Meadowlark,Aves
+recwoo1,18199,Melanerpes rubricapillus,Red-crowned Woodpecker,Aves
+rinkin1,2552,Megaceryle torquata,Ringed Kingfisher,Aves
+roahaw,201041,Rupornis magnirostris,Roadside Hawk,Aves
+rosspo1,62529,Platalea ajaja,Roseate Spoonbill,Aves
+royfly1,727228,Onychorhynchus coronatus,Royal Flycatcher,Aves
+rtlhum,5676,Amazilia tzacatl,Rufous-tailed Hummingbird,Aves
+rubsee1,9492,Sporophila minuta,Ruddy-breasted Seedeater,Aves
+rufmot1,2163,Baryphthengus martii,Rufous Motmot,Aves
+rugdov,3580,Columbina talpacoti,Ruddy Ground Dove,Aves
+rumfly1,16833,Myiozetetes cayanensis,Rusty-margined Flycatcher,Aves
+ruther1,5048,Tigrisoma lineatum,Rufescent Tiger-Heron,Aves
+rutjac1,1468,Galbula ruficauda,Rufous-tailed Jacamar,Aves
+rutpuf1,1538,Hypnelus ruficollis,Russet-throated Puffbird,Aves
+saffin,9864,Sicalis flaveola,Saffron Finch,Aves
+sahpar1,73325,Pyrilia pyrilia,Saffron-headed Parrot,Aves
+savhaw1,5235,Buteogallus meridionalis,Savanna Hawk,Aves
+secfly1,16371,Leptopogon amaurocephalus,Sepia-capped Flycatcher,Aves
+shghum1,1289646,Chrysuronia goudoti,Shining-green Hummingbird,Aves
+shtfly1,17041,Poecilotriccus sylvia,Slate-headed Tody-Flycatcher,Aves
+smbani,1971,Crotophaga ani,Smooth-billed Ani,Aves
+snoegr,4940,Egretta thula,Snowy Egret,Aves
+sobtyr1,16972,Camptostoma obsoletum,Southern Beardless-Tyrannulet,Aves
+socfly1,16842,Myiozetetes similis,Social Flycatcher,Aves
+solsan,3875,Tringa solitaria,Solitary Sandpiper,Aves
+soulap1,4867,Vanellus chilensis,Southern Lapwing,Aves
+spbwoo1,18265,Colaptes punctigula,Spot-breasted Woodpecker,Aves
+speowl1,20020,Pulsatrix perspicillata,Spectacled Owl,Aves
+spepar1,19064,Forpus conspicillatus,Spectacled Parrotlet,Aves
+srwswa1,11972,Stelgidopteryx ruficollis,Southern Rough-winged Swallow,Aves
+stbwoo2,72806,Dendroplex picus,Straight-billed Woodcreeper,Aves
+strcuc1,1989,Tapera naevia,Striped Cuckoo,Aves
+strfly1,16063,Myiodynastes maculatus,Streaked Flycatcher,Aves
+strher,62528,Butorides striata,Striated Heron,Aves
+strowl1,558468,Asio clamator,Striped Owl,Aves
+tbsfin1,367681,Sporophila funerea,Thick-billed Seed-Finch,Aves
+thbeup1,9308,Euphonia laniirostris,Thick-billed Euphonia,Aves
+thlsch3,513975,Schiffornis turdina,Brown-winged Schiffornis,Aves
+trokin,16787,Tyrannus melancholicus,Tropical Kingbird,Aves
+tropar,145234,Setophaga pitiayumi,Tropical Parula,Aves
+trsowl,19788,Megascops choliba,Tropical Screech-Owl,Aves
+turvul,4756,Cathartes aura,Turkey Vulture,Aves
+verfly,16447,Pyrocephalus rubinus,Vermilion Flycatcher,Aves
+watjac1,4580,Jacana jacana,Wattled Jacana,Aves
+wbwwre1,7613,Henicorhina leucosticta,White-breasted Wood-Wren,Aves
+whbant1,15807,Myrmeciza longipes,White-bellied Antbird,Aves
+whbman1,14235,Manacus manacus,White-bearded Manakin,Aves
+whfant1,15909,Formicivora grisea,White-fringed Antwren,Aves
+whmtyr1,17333,Arundinicola leucocephala,White-headed Marsh Tyrant,Aves
+whtdov,3280,Leptotila verreauxi,White-tipped Dove,Aves
+whttro1,73524,Trogon chionurus,White-tailed Trogon,Aves
+whwswa1,11937,Tachycineta albiventer,White-winged Swallow,Aves
+woosto,4742,Mycteria americana,Wood Stork,Aves
+y00678,4715,Caracara plancus,Crested Caracara,Aves
+yebela1,16714,Elaenia flavogaster,Yellow-bellied Elaenia,Aves
+yebfly1,16559,Tolmomyias flaviventris,Yellow-breasted Flycatcher,Aves
+yebsee1,9515,Sporophila nigricollis,Yellow-bellied Seedeater,Aves
+yecspi2,11364,Certhiaxis cinnamomeus,Yellow-chinned Spinetail,Aves
+yectyr1,17266,Tyrannulus elatus,Yellow-crowned Tyrannulet,Aves
+yehbla2,69688,Chrysomus icterocephalus,Yellow-hooded Blackbird,Aves
+yehcar1,1432779,Milvago chimachima,Yellow-headed Caracara,Aves
+yelori1,9352,Icterus nigrogularis,Yellow Oriole,Aves
+yeofly1,16567,Tolmomyias sulphurescens,Yellow-olive Flycatcher,Aves
+yercac1,10359,Cacicus cela,Yellow-rumped Cacique,Aves
+ywcpar,19003,Amazona ochrocephala,Yellow-crowned Parrot,Aves

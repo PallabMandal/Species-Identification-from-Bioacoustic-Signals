@@ -113,7 +113,10 @@ class BirdSpeciesRecognitionApp:
         try:
             # st.write(species_name)
             page = wikipedia.page(species_name, auto_suggest=False)
-            summary = page.summary
+            # limit summary to 4 sentences
+            summary = page.summary.split(".")[:5]
+            summary = (".".join(summary) + ".").strip()
+            # summary = page.summary
             url = page.url
 
             # Extract image using BeautifulSoup

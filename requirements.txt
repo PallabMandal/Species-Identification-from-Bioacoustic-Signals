@@ -9,5 +9,6 @@ tensorflow
 # sounddevice
 soundfile
 matplotlib
-opencv-python
+# opencv-python
+opencv-python-headless
 ipython

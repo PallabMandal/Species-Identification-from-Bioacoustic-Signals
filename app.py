@@ -28,7 +28,7 @@ class BirdSpeciesRecognitionApp:
     def __init__(self):
         # Load pre-trained model directly
         try:
-            self.model = load_model("my_model_3.h5", compile=False)
+            self.model = load_model("./assets/my_model_3.h5", compile=False)
         except Exception as e:
             st.error(f"Could not load the pre-trained model: {e}")
             self.model = None
@@ -111,7 +111,8 @@ class BirdSpeciesRecognitionApp:
         Fetch Wikipedia information, excluding the range map.
         """
         try:
-            page = wikipedia.page(species_name)
+            # st.write(species_name)
+            page = wikipedia.page(species_name, auto_suggest=False)
             summary = page.summary
             url = page.url
 
@@ -140,41 +141,6 @@ class BirdSpeciesRecognitionApp:
             st.error(f"Could not fetch Wikipedia info: {e}")
             return None
 
-    # def get_species_info(self, species_name):
-    #     """
-    #     Fetch Wikipedia information about the species
-    #     """
-    #     try:
-    #         # Try to get Wikipedia summary
-    #         page = wikipedia.page(species_name)
-    #         summary = page.summary
-    #         return {
-    #             'summary': summary,
-    #             'url': page.url
-    #         }
-    #     except wikipedia.exceptions.DisambiguationError as e:
-    #         st.warning(f"Multiple matches found. Suggestions: {e.options[:5]}")
-    #         return None
-    #     except Exception as e:
-    #         st.error(f"Could not fetch Wikipedia info: {e}")
-    #         return None
-
-    # def record_audio(self, duration=5, sample_rate=44100):
-    #     """
-    #     Record audio from microphone
-    #     """
-    #     st.info(f"Recording audio for {duration} seconds...")
-    #     recording = sd.rec(int(duration * sample_rate),
-    #                         samplerate=sample_rate,
-    #                         channels=1,
-    #                         dtype='float64')
-    #     sd.wait()
-
-    #     # Save recording
-    #     output_filename = 'recorded_audio.wav'
-    #     sf.write(output_filename, recording, sample_rate)
-    #     return output_filename
-
     def run(self):
         """
         Main Streamlit app
@@ -182,7 +148,7 @@ class BirdSpeciesRecognitionApp:
         st.title("🐦 Species Identification from Bioacoustic Signals")
 
         # Sidebar image display
-        image_path = "birdclef.png"  # Update with the actual path
+        image_path = "./assets/birdclef.png"  # Update with the actual path
         if os.path.exists(image_path):
             st.sidebar.image(image_path, use_container_width=True)
         else:
@@ -198,7 +164,7 @@ class BirdSpeciesRecognitionApp:
         """
         )
 
-        image_path = "deer.jpg"  # Update with the actual path
+        image_path = "./assets/deer.jpg"  # Update with the actual path
         if os.path.exists(image_path):
             st.sidebar.image(image_path, use_container_width=True)
         else:
@@ -319,20 +285,6 @@ class BirdSpeciesRecognitionApp:
                                 st.markdown(
                                     f"[🔗 Read more on Wikipedia]({species_info['url']})"
                                 )
-
-                # if top_3_species:
-                #     st.subheader("Top 3 Predicted Species")
-                #     for species, prob in zip(top_3_species, top_3_probabilities):
-                #         st.write(f"{species}: {prob*100:.2f}%")
-
-                #         # Fetch and display species info for top prediction
-                #         if species == top_3_species[0]:
-                #             species_info = self.get_species_info(species)
-
-                #             if species_info:
-                #                 st.subheader("Species Information")
-                #                 st.write(species_info['summary'])
-                #                 st.markdown(f"[Read more on Wikipedia]({species_info['url']})")
 
         # Clean up temporary files
         if os.path.exists("recorded_audio.wav"):

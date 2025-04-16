@@ -158,25 +158,21 @@ class BirdSpeciesRecognitionApp:
     #         return None
 
 
-    def record_audio(self, duration=5, sample_rate=44100):
-        """
-        Record audio from microphone
-        """
-        st.info(f"Recording audio for {duration} seconds...")
-        recording = sd.rec(int(duration * sample_rate), 
-                            samplerate=sample_rate, 
-                            channels=1, 
-                            dtype='float64')
-        sd.wait()
-
-        # recording = st.audio_input("Record a voice message")
-
-        # if recording:
-        #     st.audio(recording, end_time="5s")
-        # Save recording
-        output_filename = 'recorded_audio.wav'
-        sf.write(output_filename, recording, sample_rate)
-        return output_filename
+    # def record_audio(self, duration=5, sample_rate=44100):
+    #     """
+    #     Record audio from microphone
+    #     """
+    #     st.info(f"Recording audio for {duration} seconds...")
+    #     recording = sd.rec(int(duration * sample_rate), 
+    #                         samplerate=sample_rate, 
+    #                         channels=1, 
+    #                         dtype='float64')
+    #     sd.wait()
+        
+    #     # Save recording
+    #     output_filename = 'recorded_audio.wav'
+    #     sf.write(output_filename, recording, sample_rate)
+    #     return output_filename
 
     def run(self):
         """
@@ -197,8 +193,7 @@ class BirdSpeciesRecognitionApp:
         st.sidebar.info("""
         1. Choose audio input method
         2. Upload or record bird sound
-        3. Click 'Identify Species'
-        4. View species information
+        3. View species information
         """)
 
         image_path = "deer.jpg"  # Update with the actual path
@@ -212,19 +207,14 @@ class BirdSpeciesRecognitionApp:
             "Select Audio Input Method", 
             [
                 "Upload Audio File", 
-                "Record from Microphone"
+                # "Record from Microphone"
              ]
         )
 
-        audio_file = None
-        if input_method == "Upload Audio File":
-            audio_file = st.file_uploader(
-                "Upload .ogg or .wav or .mp3 file", 
-                type=['ogg', 'wav', 'mp3']
-            )
-        else:
-            if st.button("Start Recording"):
-                audio_file = self.record_audio()
+        audio_file = st.file_uploader(
+            "Upload a .ogg, .wav, or .mp3 file", 
+            type=['ogg', 'wav', 'mp3']
+        )
 
 
         # Save uploaded file temporarily
@@ -324,8 +314,8 @@ class BirdSpeciesRecognitionApp:
                 #                 st.markdown(f"[Read more on Wikipedia]({species_info['url']})")
 
         # Clean up temporary files
-        if os.path.exists("recorded_audio.wav"):
-            os.remove("recorded_audio.wav")
+        # if os.path.exists("recorded_audio.wav"):
+        #     os.remove("recorded_audio.wav")
 
 def main():
     app = BirdSpeciesRecognitionApp()

@@ -301,12 +301,19 @@ class BirdSpeciesRecognitionApp:
                                         if "map" in img_url:
                                             map_url = img_url
                                             break
-                                    with cols[1]:
-                                        st.image(
-                                            map_url,
-                                            caption=f"**{species} - Habitat Range**",
-                                            use_container_width=True,
-                                        )
+                                    if map_url:
+                                        with cols[1]:
+                                            st.image(
+                                                map_url,
+                                                caption=f"**🌍 Habitat Range**",
+                                                use_container_width=True,
+                                            )
+                                    else:
+                                        with cols[1]:
+                                            st.image(
+                                                species_info["image_urls"][-1],
+                                                use_container_width=True,
+                                            )
 
                                 # Link to full Wikipedia article
                                 st.markdown(

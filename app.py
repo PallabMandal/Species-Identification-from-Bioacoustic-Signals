@@ -207,14 +207,19 @@ class BirdSpeciesRecognitionApp:
             "Select Audio Input Method", 
             [
                 "Upload Audio File", 
-                # "Record from Microphone"
+                "Record from Microphone"
              ]
         )
 
-        audio_file = st.file_uploader(
-            "Upload a .ogg, .wav, or .mp3 file", 
-            type=['ogg', 'wav', 'mp3']
-        )
+        audio_file = None
+        if input_method == "Upload Audio File":
+            audio_file = st.file_uploader(
+                "Upload .ogg or .wav or .mp3 file", 
+                type=['ogg', 'wav', 'mp3']
+            )
+        else:
+            if st.button("Start Recording"):
+                audio_file = self.record_audio()
 
 
         # Save uploaded file temporarily
@@ -314,8 +319,8 @@ class BirdSpeciesRecognitionApp:
                 #                 st.markdown(f"[Read more on Wikipedia]({species_info['url']})")
 
         # Clean up temporary files
-        # if os.path.exists("recorded_audio.wav"):
-        #     os.remove("recorded_audio.wav")
+        if os.path.exists("recorded_audio.wav"):
+            os.remove("recorded_audio.wav")
 
 def main():
     app = BirdSpeciesRecognitionApp()
@@ -323,4 +328,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
